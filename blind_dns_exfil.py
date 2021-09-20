@@ -1,6 +1,6 @@
 import requests
 
-with open("blind_http_exfil.xml", "r") as f:
+with open("blind_dns_exfil.xml", "r") as f:
     data = f.read()
 
 
