@@ -18,6 +18,7 @@ class MainHandler(tornado.web.RequestHandler):
 if __name__ == "__main__":
     application =  tornado.web.Application([
         (r'/', MainHandler),
+        (r'/jar.jar', MainHandler),
     ])
     port = 9999
     application.listen(port)
