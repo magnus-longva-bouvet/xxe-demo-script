@@ -6,7 +6,7 @@ import time
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
 
-        with open("malicious.xsl","r") as file:
+        with open("jar.jar","r") as file:
             self.write(file.read())
             self.flush()
             time.sleep(99999)
