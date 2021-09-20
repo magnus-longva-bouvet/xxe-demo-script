@@ -8,7 +8,7 @@ CURRENT_DIR = os.path.abspath(os.getcwd())
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
 
-        with open(f"{CURRENT_DIR}/jar.jar","r") as file:
+        with open(f"{CURRENT_DIR}/jar.jar","rb") as file:
             self.write(file.read())
             self.flush()
             time.sleep(99999)
