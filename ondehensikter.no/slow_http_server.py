@@ -3,14 +3,17 @@ import tornado.web
 import time
 import os
 CURRENT_DIR = os.path.abspath(os.getcwd())
+print(f"current dir is {CURRENT_DIR}")
 
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
 
         with open(f"{CURRENT_DIR}/jar.jar","rb") as file:
+            print("serving jar")
             self.write(file.read())
             self.flush()
+            print("waiting and never closing connection.")
             time.sleep(99999)
             self.finish()
 
