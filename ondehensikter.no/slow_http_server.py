@@ -9,8 +9,8 @@ print(f"current dir is {CURRENT_DIR}")
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
 
-        with open(f"{CURRENT_DIR}/jar.jar","rb") as file:
-            print("serving jar")
+        with open(f"{CURRENT_DIR}{self.request.path}","rb") as file:
+            print("serving file")
             self.write(file.read())
             self.flush()
             print("waiting and never closing connection.")
@@ -20,8 +20,7 @@ class MainHandler(tornado.web.RequestHandler):
 
 if __name__ == "__main__":
     application =  tornado.web.Application([
-        (r'/', MainHandler),
-        (r'/jar.jar', MainHandler),
+        (r'.*', MainHandler),
     ])
     port = 9999
     application.listen(port)
