@@ -1,12 +1,14 @@
 from tornado.ioloop import IOLoop
 import tornado.web
 import time
+import os
+CURRENT_DIR = os.path.abspath(os.getcwd())
 
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
 
-        with open("jar.jar","r") as file:
+        with open(f"{CURRENT_DIR}/jar.jar","r") as file:
             self.write(file.read())
             self.flush()
             time.sleep(99999)
